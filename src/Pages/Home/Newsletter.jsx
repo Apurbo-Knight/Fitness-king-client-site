@@ -35,7 +35,7 @@ const Newsletter = () => {
               type="text"
               name="name"
               placeholder="Name"
-              className="input input-bordered w-full text-teal-400 rounded-md bg-teal-900 my-2"
+              className="input input-bordered w-full text-teal-400 border-2 border-teal-400 rounded-md bg-teal-900 my-2"
               required
             />
           </div>
@@ -47,12 +47,12 @@ const Newsletter = () => {
               type="email"
               name="email"
               placeholder="Email"
-              className="input input-bordered w-full text-teal-400 rounded-md bg-teal-900 my-2"
+              className="input input-bordered w-full text-teal-400 border-2 border-teal-400 rounded-md bg-teal-900 my-2"
               required
             />
           </div>
           <div className=" mt-6">
-            <button className=" bg-teal-900 w-full text-teal-400 p-2 rounded-md">Subscribe Now</button>
+            <button className=" bg-teal-900 w-full text-teal-400 border-2 border-teal-400 p-2 rounded-md">Subscribe Now</button>
           </div>
         </form>
       </div>
