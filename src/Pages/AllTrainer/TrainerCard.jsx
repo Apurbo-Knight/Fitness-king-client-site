@@ -5,7 +5,7 @@ const TrainerCard = ({ trainer }) => {
   const { _id, img, name, years_of_experience, time_slot } = trainer || {};
   return (
     <div>
-      <div className="lg:m-5 group relative ">
+      <div className="lg:m-5 group relative border-2 border-teal-400 rounded-md">
         <img src={img} alt="" className="rounded-t-md" />
         <div className="absolute bottom-0 w-full ">
           <div className=" w-full h-full  border-b-[3rem] group-hover:border-b-[110px] duration-500 border-b-teal-400">
