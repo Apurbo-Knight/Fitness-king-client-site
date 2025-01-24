@@ -20,12 +20,12 @@ const Banner = () => {
         <h2 className="text-teal-400 text-2xl md:text-5xl  font-semibold mb-3">
           THE BEST VERSION OF YOURSELF
         </h2>
-        <p className="text-white mb-8 font-light md:text-xl capitalize ">
+        <p className="text-white mb-8 font-semibold md:text-xl capitalize ">
           Achieve your health & fitness goals at any stage.
         </p>
         <Link
           to={"/allClassesPage"}
-          className="text-white hover:text-teal-400 bg-teal-400 hover:bg-white duration-500 px-5 py-3 rounded-md  "
+          className="text-white hover:text-teal-400 bg-teal-400 hover:bg-white hover:border-2 hover:border-teal-400 duration-500 px-5 py-3 rounded-md font-semibold "
         >
           OUR CLASSES
         </Link>
