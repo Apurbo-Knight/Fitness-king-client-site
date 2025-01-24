@@ -43,7 +43,7 @@ const CommunityPage = () => {
   return (
     <div className="">
         <div className="mx-auto p-10 bg-black min-h-screen">
-      <h1 className="text-5xl font-bold text-white text-center mb-6 pb-10 pt-10">
+      <h1 className="text-5xl  text-white text-center mb-6 pb-10 pt-10">
          All <span className="text-teal-400 border-b-4 border-teal-400"> Forums</span>
       </h1>
       <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-[10%]">
