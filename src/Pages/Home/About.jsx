@@ -81,7 +81,7 @@ const About = () => {
             </p>
           </ul>
         </div>
-        <div className="flex-1 border-y-8 hover:border-8 rounded-3xl border-teal-400">
+        <div className="flex-1 border-y-8 hover:border-4 rounded-3xl border-teal-400">
           <img
             className=" rounded-3xl hover:scale-95 duration-500"
             src={about}
