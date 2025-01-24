@@ -50,7 +50,7 @@ const AddNewForam = () => {
             <label className="block font-medium mb-2 text-teal-400">Title</label>
             <input
               type="text"
-              className="w-full px-3 py-2 border rounded-md bg-teal-600"
+              className="w-full px-3 py-2  rounded-md bg-teal-600 border-2 border-teal-400"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               required
@@ -59,7 +59,7 @@ const AddNewForam = () => {
           <div className="mb-4">
             <label className="block font-medium mb-2 text-teal-400">Description</label>
             <textarea
-              className="w-full px-3 py-2 border rounded-md bg-teal-600"
+              className="w-full px-3 py-2  rounded-md bg-teal-600 border-2 border-teal-400"
               rows="4"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
