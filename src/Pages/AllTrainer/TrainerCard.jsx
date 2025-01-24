@@ -24,7 +24,7 @@ const TrainerCard = ({ trainer }) => {
           <div className="mb-4 absolute bottom-[.05rem] w-full ">
             <Link
               to={`/trainerDetails/${_id}`}
-              className="rounded-md px-4 mx-2 py-2  text-teal-400  bg-white  border-2 border-transparent  opacity-0 group-hover:opacity-100 group-hover:duration-300 group-hover:delay-300 "
+              className="rounded-md px-4 mx-2 py-2   text-gray-200  bg-teal-400  border border-teal-600 hover:bg-teal-600 duration-200  opacity-0 group-hover:opacity-100 group-hover:duration-300 group-hover:delay-300 "
             >
               Know more
             </Link>

@@ -21,7 +21,7 @@ const AllTrainer = () => {
 
       {/* //SECOND section */}
       <div className="py-10 w-full lg:w-[80%] mx-auto ">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 px-2 ">
           {mainTrainers?.map((trainer) => (
             <TrainerCard key={trainer._id} trainer={trainer}></TrainerCard>
           ))}
