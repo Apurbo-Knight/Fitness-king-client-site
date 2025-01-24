@@ -42,7 +42,7 @@ const AllClassesPage = () => {
                 <p className=" text-teal-400">
                   {classItem.classDuration} Hours Class Duration
                 </p>
-                <p className="flex items-center gap-4 text-teal-400 mt-2">
+                <p className="flex items-center gap-4 text-teal-400 mt-2 font-semibold text-xl">
                   Trainers{" "}
                   <div className="flex flex-wrap gap-2">
                     {classItem.trainersData.slice(0, 5).map((trainer) => (
