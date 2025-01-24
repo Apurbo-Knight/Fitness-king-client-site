@@ -9,7 +9,7 @@ const TrainerCard = ({ trainer }) => {
         <img src={img} alt="" className="rounded-t-md" />
         <div className="absolute bottom-0 w-full ">
           <div className=" w-full h-full  border-b-[3rem] group-hover:border-b-[110px] duration-500 border-b-teal-400">
-            <h1 className="absolute  group-hover:right-0 group-hover:duration-300 text-xl font-semibold p-2 text-white ">
+            <h1 className="absolute  group-hover:right-0 group-hover:duration-300 2xl:text-xl font-semibold p-2 text-white ">
               {name}
             </h1>
           </div>
