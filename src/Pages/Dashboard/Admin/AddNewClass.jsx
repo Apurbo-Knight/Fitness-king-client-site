@@ -66,7 +66,7 @@ const AddNewClass = () => {
           <input
             type="text"
             placeholder="Enter Class Name"
-            className="w-full h-12 rounded-md my-2 bg-teal-900"
+            className="w-full h-12 rounded-md my-2 bg-teal-900 border-2 border-teal-400"
             {...register("name", { required: true })}
           />
           <label className="text-teal-900 font-semibold">
@@ -76,7 +76,7 @@ const AddNewClass = () => {
             type="text"
             placeholder="Enter Class Duration"
             required
-            className="w-full h-12 rounded-md my-2 bg-teal-900"
+            className="w-full h-12 rounded-md my-2 bg-teal-900 border-2 border-teal-400"
             {...register("classDuration", { required: true })}
           />
           <label className="text-teal-900 font-semibold">Details :</label>
@@ -84,14 +84,14 @@ const AddNewClass = () => {
             type="text"
             placeholder="Enter Details"
             required
-            className="w-full h-16 rounded-md my-2 bg-teal-900"
+            className="w-full h-16 rounded-md my-2 bg-teal-900 border-2 border-teal-400"
             {...register("details", { required: true })}
           />
           <input
             type="file"
             placeholder="Upload Image"
             required
-            className="w-full h-16 text-teal-900 font-semibold rounded-md my-2"
+            className="w-full h-16 text-teal-900 font-semibold rounded-md my-2 "
             {...register("image", { required: true })}
           ></input>
           <button className="p-2 bg-teal-600 border border-teal-400 hover:bg-teal-900 rounded-md text-white">
