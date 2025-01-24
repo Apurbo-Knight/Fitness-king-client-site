@@ -15,7 +15,7 @@ const AllTrainer = () => {
   const mainTrainers = trainers.filter((trainer) => trainer.role === "trainer");
   
   return (
-    <div className="bg-black pt-24 lg:pt-24 mb-16 py-10  ">
+    <div className="bg-black pt-24 lg:pt-24  py-10  ">
       
       <h2 className="text-5xl text-center text-white mb-10"> Our <span className="text-teal-400 border-b-4 border-teal-400">Trainers</span></h2>
 
