@@ -15,9 +15,10 @@
 - All trainers information, and their expertise section 
 - Trainer can manage and update their Slot
 - Forum section (All forums add bt admin & trainers)
-- Admin can delete teaiters also update add new classes
+- Admin can delete teaiters also update & add new classes
 - A testimonial section where member can share their opinions
 - A subscription section
+- Please VIsite this website to find more interesting features
 
 #  Admin Name : Apurbo
 #  Admin Email :apurbo@gmail.com
