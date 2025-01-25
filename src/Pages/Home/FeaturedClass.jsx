@@ -6,7 +6,7 @@ const FeaturedClass = () => {
   const { data: classes = [] } = useQuery({
     queryKey: ["classes"],
     queryFn: async () => {
-      const res = await axios.get("http://localhost:1000/class");
+      const res = await axios.get("https://assignment-12-server-iota-ruby.vercel.app/class");
       return res.data;
     },
   });

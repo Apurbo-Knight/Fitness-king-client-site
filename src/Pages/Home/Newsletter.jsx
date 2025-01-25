@@ -10,7 +10,7 @@ const Newsletter = () => {
     const newsletterValue = { name, email };
     console.log(newsletterValue);
     formData.reset();
-    const newsRes = await axios.post("http://localhost:1000/newsletter", newsletterValue);
+    const newsRes = await axios.post("https://assignment-12-server-iota-ruby.vercel.app/newsletter", newsletterValue);
     console.log(newsRes);	
   }
   return (

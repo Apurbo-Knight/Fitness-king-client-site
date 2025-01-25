@@ -27,7 +27,7 @@ const AddNewForam = () => {
     };
     console.log(forumData);
 
-    const res = await axios.post("http://localhost:1000/forums", forumData);
+    const res = await axios.post("https://assignment-12-server-iota-ruby.vercel.app/forums", forumData);
     if (res.data.insertedId) {
       // show popUp
       Swal.fire({

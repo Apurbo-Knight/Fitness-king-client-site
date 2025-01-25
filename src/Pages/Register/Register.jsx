@@ -31,7 +31,7 @@ const Register = () => {
             image: data.photoURL,
             role: "member",
           };
-          axios.post("http://localhost:1000/users", userInfo).then((res) => {
+          axios.post("https://assignment-12-server-iota-ruby.vercel.app/users", userInfo).then((res) => {
             if (res.data.insertedId) {
               console.log("User added to DB Succeessfull");
               reset();

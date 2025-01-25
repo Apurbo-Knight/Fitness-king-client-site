@@ -7,7 +7,7 @@ const Balance = () => {
   const { data: payments = [] } = useQuery({
     queryKey: ["payments"],
     queryFn: async () => {
-      const res = await axios.get(`http://localhost:1000/payment`);
+      const res = await axios.get(`https://assignment-12-server-iota-ruby.vercel.app/payment`);
       return res.data;
     },
   });

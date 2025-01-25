@@ -13,7 +13,7 @@ const useRole = () => {
         queryKey:['role', user?.email],
         enabled: !loading && !!user?.email,
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:1000/users/role/${user?.email}`);
+            const res = await axios.get(`https://assignment-12-server-iota-ruby.vercel.app/users/role/${user?.email}`);
             return res.data.role;
         }
     })

@@ -15,7 +15,7 @@ const TrainerBooking = () => {
     queryKey: ["trainer", slot],
     queryFn: async () => {
       const res = await axios.get(
-        `http://localhost:1000/trainers/${id}/${slot}`
+        `https://assignment-12-server-iota-ruby.vercel.app/trainers/${id}/${slot}`
       );
       return res.data[0];
     },

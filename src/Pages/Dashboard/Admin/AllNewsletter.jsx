@@ -7,7 +7,7 @@ const AllNewsletter = () => {
     const {data:subscribers=[]} = useQuery({
         queryKey: [''],
         queryFn: async () => {
-            const res = await axios.get('http://localhost:1000/newsletter');
+            const res = await axios.get('https://assignment-12-server-iota-ruby.vercel.app/newsletter');
             return res.data;
         }
     })

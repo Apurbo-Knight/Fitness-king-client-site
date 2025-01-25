@@ -16,7 +16,7 @@ const CheckoutForm = ({ price, bookedData }) => {
   useEffect(() => {
     if(price>0){
       axios
-      .post("http://localhost:1000/create-payment-intent", { price })
+      .post("https://assignment-12-server-iota-ruby.vercel.app/create-payment-intent", { price })
       .then((res) => {
         console.log(res.data.clientSecret);
         setClientSecret(res.data.clientSecret);
@@ -81,7 +81,7 @@ const CheckoutForm = ({ price, bookedData }) => {
           slot: bookedData.slot,
           transactionId: paymentIntent.id,
         };
-        const res = await axios.post("http://localhost:1000/payment", payment);
+        const res = await axios.post("https://assignment-12-server-iota-ruby.vercel.app/payment", payment);
         console.log("payment saved", res);
         if(res.data?.insertedId){
           Swal.fire({

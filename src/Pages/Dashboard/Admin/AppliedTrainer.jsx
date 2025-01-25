@@ -6,7 +6,7 @@ const AppliedTrainer = () => {
   const { data: trainer = [] } = useQuery({
     queryKey: ["trainer"], // Include email in queryKey for dependency tracking
     queryFn: async () => {
-      const res = await axios.get("http://localhost:1000/beATrainer");
+      const res = await axios.get("https://assignment-12-server-iota-ruby.vercel.app/beATrainer");
       return res.data;
     },
   });
@@ -72,7 +72,7 @@ const AppliedTrainer = () => {
               </p>
             </div>
             <div>
-              
+
             </div>
           </div>
         ))}

@@ -11,7 +11,7 @@ const CommunityPage = () => {
   const { data:forums=[]  } = useQuery({
     queryKey: ["forums"],
     queryFn: async () => {
-      const res = await axios.get("http://localhost:1000/forums");
+      const res = await axios.get("https://assignment-12-server-iota-ruby.vercel.app/forums");
       return res.data;
     },
   });
@@ -20,7 +20,7 @@ const CommunityPage = () => {
   const updateCounts = useMutation({
     mutationFn: async ({ id, action }) => {
       const res = await axios.patch(
-        `http://localhost:1000/patch/forums/${id}`,
+        `https://assignment-12-server-iota-ruby.vercel.app/patch/forums/${id}`,
         { action }
       );
       return res.data;

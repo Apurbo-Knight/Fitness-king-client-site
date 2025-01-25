@@ -51,7 +51,7 @@ const BeATrainer = () => {
     };
     // from data*******************
     console.log(formattedData);
-    const beATrainer = await axios.post(" http://localhost:1000/beATrainer", formattedData); // Send the data to server
+    const beATrainer = await axios.post(" https://assignment-12-server-iota-ruby.vercel.app/beATrainer", formattedData); // Send the data to server
     
     if(beATrainer.data.insertedId){
         Swal.fire({

@@ -8,7 +8,7 @@ const AllTrainer = () => {
   const { data: trainers=[] }= useQuery({
     queryKey: ["trainers"],
     queryFn: async () => {
-      const res = await axios.get("http://localhost:1000/users");
+      const res = await axios.get("https://assignment-12-server-iota-ruby.vercel.app/users");
       return res.data;
     },
   });

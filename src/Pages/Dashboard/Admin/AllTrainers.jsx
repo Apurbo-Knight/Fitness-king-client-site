@@ -10,7 +10,7 @@ const AllTrainers = () => {
   const { data: trainers = [],refetch } = useQuery({
     queryKey: ["trainers"],
     queryFn: async () => {
-      const res = await axios.get("http://localhost:1000/users");
+      const res = await axios.get("https://assignment-12-server-iota-ruby.vercel.app/users");
       return res.data;
     },
   });
@@ -18,7 +18,7 @@ const AllTrainers = () => {
   console.log(trainers);
   
   const handleMakeMember = (trainer) => {
-    axios.patch(`http://localhost:1000/users/member/${trainer._id}`)
+    axios.patch(`https://assignment-12-server-iota-ruby.vercel.app/users/member/${trainer._id}`)
     .then((res) => {
       console.log(res.data);
       if(res.data.modifiedCount){

@@ -10,7 +10,7 @@ const ActivityLogPage = () => {
   const { data: trainer = [] } = useQuery({
     queryKey: ["trainer"],
     queryFn: async () => {
-      const res = await axios.get("http://localhost:1000/beATrainer");
+      const res = await axios.get("https://assignment-12-server-iota-ruby.vercel.app/beATrainer");
       return res.data;
     },
   });

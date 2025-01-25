@@ -17,7 +17,7 @@ const GoogleLogin = () => {
                 image: result.user?.photoURL,
                 role: "member"
             }
-            axios.post('http://localhost:1000/users',userInfo)
+            axios.post('https://assignment-12-server-iota-ruby.vercel.app/users',userInfo)
             .then(res=>{
                 console.log(res.data);
                 navigate('/');
