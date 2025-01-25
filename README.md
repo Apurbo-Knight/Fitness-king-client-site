@@ -5,7 +5,7 @@
 - Making thing easy for Trainer and Members
 
 # Live Website Link
-- https://next-chapter.netlify.app/
+- https://fitness-king.netlify.app/
 
 #  5 features of your website/project.
 - Authentication    
