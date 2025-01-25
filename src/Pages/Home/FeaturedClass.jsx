@@ -34,7 +34,7 @@ const FeaturedClass = () => {
                 />
                 <div className="p-4 bg-black">
                   <h3 className="font-semibold text-xl  text-teal-400">
-                    {classItem.name}
+                    {classItem.name}  <span className="text-black bg-teal-400 px-1 rounded-full"> {classItem.count}</span>
                   </h3>
                   <p className=" text-teal-400">{classItem.details}</p>
                   <p className=" text-teal-400">
