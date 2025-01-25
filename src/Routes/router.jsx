@@ -27,6 +27,7 @@ import CommunityPage from "../Pages/CommunityPage/CommunityPage";
 import PrivateRoute from "./PrivateRoute";
 import TrainerRoute from "./TrainerRoute";
 import AdminRoute from "./AdminRoute";
+import Error from "../Pages/Error/Error";
 
   export const router = createBrowserRouter([
     {
@@ -128,5 +129,9 @@ import AdminRoute from "./AdminRoute";
           element:<PrivateRoute><BookedTrainer></BookedTrainer></PrivateRoute>
         },
       ]
+    },
+    {
+      path:'*',
+      element:<Error></Error>
     }
   ]);
