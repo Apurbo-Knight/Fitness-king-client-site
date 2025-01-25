@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Table } from "flowbite-react";
 import React from "react";
+import { Helmet } from "react-helmet-async";
 
 const Balance = () => {
   const { data: payments = [] } = useQuery({
@@ -17,7 +18,11 @@ const Balance = () => {
   console.log(payments);
   return (
     <div className="pt-5">
-
+        <Helmet>
+                        <title>
+                            Fitness king | Balance
+                        </title>
+                    </Helmet>
       <div className="flex justify-between">
         <h2 className="font-semibold text-2xl text-white mb-4">Total <span className="
       text-teal-400 border-b-2 border-teal-400"> Payments: {payments.length}</span> </h2>

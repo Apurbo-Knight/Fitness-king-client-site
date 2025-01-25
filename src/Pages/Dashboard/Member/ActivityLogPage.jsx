@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Button, Modal, Table } from "flowbite-react";
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { FaEye } from "react-icons/fa";
 
 const ActivityLogPage = () => {
@@ -25,6 +26,11 @@ const ActivityLogPage = () => {
 
   return (
     <div>
+      <Helmet>
+                      <title>
+                          Fitness king | Activity Log
+                      </title>
+                  </Helmet>
       <h2 className="text-center text-teal-400 font-semibold text-5xl mb-5">
         Activity Log{" "}
       </h2>

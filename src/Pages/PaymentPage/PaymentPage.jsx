@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import CheckoutForm from "./CheckoutForm";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import { Helmet } from "react-helmet-async";
 
 // TODO ADD publishable key
 const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
@@ -13,6 +14,11 @@ const PaymentPage = () => {
   console.log(bookedData);
   return (
     <div className="pt-20  bg-black min-h-screen ">
+      <Helmet>
+                      <title>
+                          Fitness king | Payment
+                      </title>
+                  </Helmet>
       <h2 className="text-center font-semibold text-5xl text-gray-400">Make your <span className="text-teal-400 border-b-4 border-teal-400">Payment</span></h2>
       <div className="flex">
         <div className=" flex-1 mt-20 w-1/2 h-[450px] shadow-lg rounded-lg p-6 border border-teal-400 hover:shadow-xl transition-shadow duration-300">

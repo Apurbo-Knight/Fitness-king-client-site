@@ -5,6 +5,7 @@ import { Table } from "flowbite-react";
 // import { FaDeleteLeft } from "react-icons/fa6";
 import { FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const AllTrainers = () => {
   const { data: trainers = [],refetch } = useQuery({
@@ -37,6 +38,11 @@ const AllTrainers = () => {
 
   return (
     <div className="overflow-x-auto">
+      <Helmet>
+                      <title>
+                          Fitness king | Trainers List
+                      </title>
+                  </Helmet>
       <h2 className="text-center text-5xl text-white mt-5 mb-10">All <span className="text-teal-400 border-b-4 border-teal-400">Trainers</span></h2>
       <Table striped>
         <Table.Head>

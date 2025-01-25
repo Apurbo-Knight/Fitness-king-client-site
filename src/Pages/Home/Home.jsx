@@ -7,10 +7,16 @@ import Newsletter from './Newsletter';
 import Team from './Team';
 import FeaturedClass from './FeaturedClass';
 import Forum from './Forum';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
     return (
         <div>
+            <Helmet>
+                <title>
+                    Fitness king | Home
+                </title>
+            </Helmet>
             <Banner></Banner>
             <Featured></Featured>
             <About></About>

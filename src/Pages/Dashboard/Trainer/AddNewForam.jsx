@@ -3,6 +3,7 @@ import axios from "axios";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import useRole from "../../../Hooks/useRole";
+import { Helmet } from "react-helmet-async";
 
 const AddNewForam = () => {
   const { user } = useContext(AuthContext);
@@ -42,6 +43,11 @@ const AddNewForam = () => {
 
   return (
     <div>
+      <Helmet>
+                      <title>
+                          Fitness king | Add New Forum
+                      </title>
+                  </Helmet>
       <h2 className="my-5 text-center mb-10  text-gray-100 text-5xl">Add a New <span className="border-b-4 border-teal-400 text-teal-400">Forum</span></h2>
       <div className="max-w-md mx-auto p-6  shadow-lg rounded-md bg-teal-900">
         {message && <p className="mb-4 text-green-600">{message}</p>}

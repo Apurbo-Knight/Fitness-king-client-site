@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React from "react";
+import { Helmet } from "react-helmet-async";
 
 const AppliedTrainer = () => {
   const { data: trainer = [] } = useQuery({
@@ -13,6 +14,11 @@ const AppliedTrainer = () => {
   console.log(trainer);
   return (
     <div className="p-4">
+      <Helmet>
+                      <title>
+                          Fitness king | Applied Trainers
+                      </title>
+                  </Helmet>
       <h2 className=" font-semibold mb-10 text-center text-5xl text-white">Applied <span className="
       text-teal-400 border-b-4 border-teal-400">Trainer</span></h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

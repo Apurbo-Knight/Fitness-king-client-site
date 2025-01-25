@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import TrainerCard from "./TrainerCard";
+import { Helmet } from "react-helmet-async";
 
 
 const AllTrainer = () => {
@@ -16,6 +17,11 @@ const AllTrainer = () => {
   
   return (
     <div className="bg-black pt-24 lg:pt-24 py-10  ">
+      <Helmet>
+                      <title>
+                          Fitness king | All Trainers
+                      </title>
+                  </Helmet>
       
       <h2 className="text-5xl text-center text-white mb-10"> Our <span className="text-teal-400 border-b-4 border-teal-400">Trainers</span></h2>
 

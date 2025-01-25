@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { Table } from 'flowbite-react';
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const AllNewsletter = () => {
     const {data:subscribers=[]} = useQuery({
@@ -15,6 +16,11 @@ const AllNewsletter = () => {
     // console.log(data);
     return (
         <div>
+          <Helmet>
+                          <title>
+                              Fitness king | All Subscribers
+                          </title>
+                      </Helmet>
             <h2 className='font-semibold text-white text-5xl mb-10 text-center '>All <span className='text-teal-400 border-b-4 border-teal-400'>Subscribers: {subscribers.length}</span></h2>
             <div className="overflow-x-auto">
                   <Table className='' striped>

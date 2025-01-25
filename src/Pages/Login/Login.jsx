@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
 import GoogleLogin from "../../Components/GoogleLogin";
 import { FaHome } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -50,6 +51,11 @@ const Login = () => {
   };
   return (
     <div className="bg-black min-h-screen">
+      <Helmet>
+                      <title>
+                          Fitness king | Login
+                      </title>
+                  </Helmet>
       <div className=" flex  justify-center items-center pt-52">
         <div className="card w-full border-2 border-teal-400 bg-teal-600 max-w-sm shrink-0 shadow-2xl">
           <form

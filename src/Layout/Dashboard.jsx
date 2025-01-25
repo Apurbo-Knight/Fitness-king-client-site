@@ -13,12 +13,18 @@ import { SiTrainerroad } from "react-icons/si";
 import { MdOutlineManageAccounts } from "react-icons/md";
 import { LuBookPlus } from "react-icons/lu";
 import gym from "../assets/gym.png"
+import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {
   const [role] = useRole();
   console.log(role);
   return (
     <div className="flex bg-black">
+      <Helmet>
+                      <title>
+                          Fitness king | Dashboard
+                      </title>
+                  </Helmet>
       <div className="w-52 min-h-screen text-white font-semibold  bg-teal-400">
         <ul className="menu">
           <li>

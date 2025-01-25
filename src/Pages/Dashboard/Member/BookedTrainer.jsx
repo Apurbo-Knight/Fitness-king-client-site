@@ -3,6 +3,7 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Table } from "flowbite-react";
+import { Helmet } from "react-helmet-async";
 
 const BookedTrainer = () => {
   const { user } = useContext(AuthContext);
@@ -17,6 +18,11 @@ const BookedTrainer = () => {
   console.log(bookedTrainers);
   return (
     <div>
+      <Helmet>
+                      <title>
+                          Fitness king | Booked Trainers
+                      </title>
+                  </Helmet>
       <h2 className="text-center text-white font-semibold text-5xl mb-4">
         Booked{" "}
         <span className="text-teal-400 border-b-4 border-teal-400">

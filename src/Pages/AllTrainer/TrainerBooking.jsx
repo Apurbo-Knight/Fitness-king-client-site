@@ -4,6 +4,7 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import Select from "react-select";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const TrainerBooking = () => {
   const { user } = useContext(AuthContext);
@@ -50,6 +51,11 @@ const TrainerBooking = () => {
 
   return (
     <div className="pt-20 bg-black min-h-screen">
+      <Helmet>
+                      <title>
+                          Fitness king | Book Trainer
+                      </title>
+                  </Helmet>
       <h2 className="text-center text-5xl mb-16 text-white">
         Book{" "}
         <span className="text-teal-400 border-b-2 border-teal-400">

@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 
@@ -57,6 +58,11 @@ const AddNewClass = () => {
 
   return (
     <div>
+      <Helmet>
+                      <title>
+                          Fitness king | Add New Class
+                      </title>
+                  </Helmet>
       <h2 className="my-5 mb-10 text-center font-semibold text-white sm:text-2xl md:text-4xl lg:text-5xl">
         Add <span className="text-teal-400 border-b-4 border-teal-400">New Class</span>
       </h2>

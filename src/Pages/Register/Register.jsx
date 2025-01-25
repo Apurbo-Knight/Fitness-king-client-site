@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import GoogleLogin from "../../Components/GoogleLogin";
 import { FaHome } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { createUser, updateUserProfile } = useContext(AuthContext);
@@ -51,6 +52,11 @@ const Register = () => {
   };
   return (
     <div className="">
+      <Helmet>
+                      <title>
+                          Fitness king | Register
+                      </title>
+                  </Helmet>
       <div className=" flex justify-center items-center pt-30 bg-black min-h-screen">
         <div className=" bg-teal-600 border-2 border-teal-400 rounded-xl w-full max-w-sm shrink-0 shadow-2xl">
           <h2 className="font-bold text-teal-900 text-3xl text-center">

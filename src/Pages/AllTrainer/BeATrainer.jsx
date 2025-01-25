@@ -5,6 +5,7 @@ import axios from "axios";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import useRole from "../../Hooks/useRole";
+import { Helmet } from "react-helmet-async";
 
 const BeATrainer = () => {
   const { user } = useContext(AuthContext);
@@ -68,6 +69,11 @@ const BeATrainer = () => {
 
   return (
     <div className="pt-20 bg-black pb-10">
+      <Helmet>
+                      <title>
+                          Fitness king | Be A Trauner
+                      </title>
+                  </Helmet>
       <h2 className="text-center font-semibold text-white text-5xl mb-10">
         Be A  <span className="text-teal-400 border-b-4 border-teal-400 ">Trainer</span>
       </h2>

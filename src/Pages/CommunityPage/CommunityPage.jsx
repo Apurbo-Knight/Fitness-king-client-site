@@ -2,6 +2,7 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import React, { useContext } from "react";
 import useRole from "../../Hooks/useRole";
+import { Helmet } from "react-helmet-async";
 // import { AuthContext } from "../../Provider/AuthProvider";
 
 const CommunityPage = () => {
@@ -42,6 +43,11 @@ const CommunityPage = () => {
 
   return (
     <div className="">
+      <Helmet>
+                      <title>
+                          Fitness king | Community
+                      </title>
+                  </Helmet>
         <div className="mx-auto p-10 bg-black min-h-screen">
       <h1 className="text-5xl  text-white text-center mb-6 pb-10 pt-10">
          All <span className="text-teal-400 border-b-4 border-teal-400"> Forums</span>

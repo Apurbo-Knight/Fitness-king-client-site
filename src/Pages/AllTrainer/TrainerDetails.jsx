@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { BsFacebook, BsLinkedin } from "react-icons/bs";
 import { Link, useParams } from "react-router-dom";
 
@@ -23,6 +24,11 @@ const TrainerDetails = () => {
   console.log(trainer);
   return (
     <div className="bg-black sm: pt-24 min-h-screen">
+      <Helmet>
+                      <title>
+                          Fitness king | Trainer Details
+                      </title>
+                  </Helmet>
       <div className="pb-16  sm:w-[100%] mx-auto">
         {/* //second section */}
         <div className=" items-center justify-center sm:flex sm:justify-between w-full md:w-[60%] mx-auto py-12 px-2 ">

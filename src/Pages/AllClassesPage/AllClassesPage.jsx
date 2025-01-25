@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React from "react";
 import ImgComp from "./ImgComp";
+import { Helmet } from "react-helmet-async";
 
 const AllClassesPage = () => {
   const { data: classes = [] } = useQuery({
@@ -14,6 +15,11 @@ const AllClassesPage = () => {
   console.log(classes);
   return (
     <div className="bg-black">
+      <Helmet>
+                      <title>
+                          Fitness king | All Classes
+                      </title>
+                  </Helmet>
       <h2 className="text-5xl text-center text-white pt-20 mb-10">
         Our{" "}
         <span className="text-teal-400 border-b-4 border-teal-400">
