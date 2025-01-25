@@ -20,6 +20,7 @@ const AllClassesPage = () => {
           Classes
         </span>
       </h2>
+      <div className="text-center mb-10"><input className="bg-teal-900 rounded-md" type="text" placeholder="Type Class Name" /> <button className="bg-teal-400 p-2 rounded-md text-white">Search</button></div>
       <div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
           {classes?.map((classItem) => (
