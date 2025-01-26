@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import Swal from "sweetalert2";
 
 const Newsletter = () => {
   const handleSubmit = async (e) => {
@@ -12,6 +13,16 @@ const Newsletter = () => {
     formData.reset();
     const newsRes = await axios.post("https://assignment-12-server-iota-ruby.vercel.app/newsletter", newsletterValue);
     console.log(newsRes);	
+    if (newsRes.data.insertedId) {
+      // show popUp
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Subscribed",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
   }
   return (
     <div className="md:flex justify-center items-center bg-black p-10">
