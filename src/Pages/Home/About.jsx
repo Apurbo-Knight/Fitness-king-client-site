@@ -11,7 +11,7 @@ const About = () => {
         <span className="text-teal-400 border-b-4 border-teal-400">FITNESS KING</span>
       </h2>
       <div className="lg:flex items-center py-20 px-10 xl:px-36 gap-10 2xl:gap-36">
-        <div className="flex-1 text-justify border border-teal-400 rounded-xl p-10 mb-10">
+        <div className="flex-1 text-justify  mb-10">
           <div className="flex justify-center">
             <GiWeightLiftingUp className="text-teal-400 text-5xl mb-5" />
           </div>
@@ -81,7 +81,7 @@ const About = () => {
             </p>
           </ul>
         </div>
-        <div className="flex-1 border-y-8 hover:border-4 rounded-3xl border-teal-400">
+        <div className="flex-1 border-y-8 hover:border-2 rounded-3xl border-teal-400">
           <img
             className=" rounded-3xl hover:scale-95 duration-500"
             src={about}
