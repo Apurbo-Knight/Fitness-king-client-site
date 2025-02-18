@@ -36,26 +36,26 @@ const AppliedTrainer = () => {
               <h3 className="text-lg text-teal-400 font-bold mb-2">
                 {singleTrainer.fullName}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-teal-600">
                 <span className="font-semibold">Age:</span> {singleTrainer.age}
               </p>
-              <p className="text-gray-600">
+              <p className="text-teal-600">
                 <span className="font-semibold">Available Time:</span>{" "}
                 {singleTrainer.availableTime}
               </p>
-              <p className="text-gray-600">
+              <p className="text-teal-600">
                 <span className="font-semibold">Other Info:</span>{" "}
                 {singleTrainer.otherInfo}
               </p>
-              <p className="text-gray-600">
+              <p className="text-teal-600">
                 <span className="font-semibold">Skills:</span>{" "}
                 {singleTrainer.skills.join(", ")}
               </p>
-              <p className="text-gray-600">
+              <p className="text-teal-600">
                 <span className="font-semibold">Available Days:</span>{" "}
                 {singleTrainer.availableDays.join(", ")}
               </p>
-              <p className="text-gray-600">
+              <p className="text-teal-600">
                 <span className="font-semibold">Status:</span>{" "}
                 <span
                   className={`${
@@ -67,7 +67,7 @@ const AppliedTrainer = () => {
                   {singleTrainer.status}
                 </span>
               </p>
-              <p className="text-gray-600">
+              <p className="text-teal-600">
                 <span className="font-semibold">Email:</span>{" "}
                 <a
                   href={`mailto:${singleTrainer.email}`}
