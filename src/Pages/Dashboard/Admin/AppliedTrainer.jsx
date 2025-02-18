@@ -60,8 +60,8 @@ const AppliedTrainer = () => {
                 <span
                   className={`${
                     singleTrainer.status === "pending"
-                      ? "text-yellow-500"
-                      : "text-green-500"
+                      ? "text-yellow-700"
+                      : "text-green-900"
                   } font-medium`}
                 >
                   {singleTrainer.status}
