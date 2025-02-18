@@ -24,7 +24,7 @@ const Featured = () => {
           <h1 className="text-2xl font-semibold my-3 text-teal-400 ">
             Nutrition for Growth
           </h1>
-          <p className="text-sm text-gray-400 ">
+          <p className="text-sm text-teal-200 ">
             Providing dietary strategies to support fitness goals. Meal plans
             tailored for muscle gain, fat loss, or general health.
           </p>
@@ -38,7 +38,7 @@ const Featured = () => {
           <h1 className="text-2xl font-semibold my-3 text-teal-400 ">
             Mobility & Flexibility
           </h1>
-          <p className="text-sm text-gray-400 ">
+          <p className="text-sm text-teal-200 ">
             Enhancing range of motion and joint health. Yoga and Pilates classes
             tailored for mobility.
           </p>
@@ -52,7 +52,7 @@ const Featured = () => {
           <h1 className="text-2xl font-semibold my-3 text-teal-400 ">
             Basics in Bodybuilding
           </h1>
-          <p className="text-sm text-gray-400 ">
+          <p className="text-sm text-teal-200 ">
             Building a solid foundation in fitness for beginners. Step-by-step
             programs to build strength and endurance gradually.
           </p>
@@ -66,7 +66,7 @@ const Featured = () => {
           <h1 className="text-2xl font-semibold my-3 text-teal-400 ">
             Mastery in Bodybuilding
           </h1>
-          <p className="text-sm text-gray-400 ">
+          <p className="text-sm text-teal-200 ">
             Building strength and physique through discipline and advanced
             techniques.
           </p>
@@ -80,7 +80,7 @@ const Featured = () => {
           <h1 className="text-2xl font-semibold my-3 text-teal-400 ">
             Hybrid Training Zone
           </h1>
-          <p className="text-sm text-gray-400 ">
+          <p className="text-sm text-teal-200 ">
             Combining multiple disciplines for a versatile fitness approach.
             Access to multi-functional equipment.
           </p>
@@ -92,7 +92,7 @@ const Featured = () => {
             className="w-32 h-32 mx-auto rounded-full bg-cover hover:transform hover:scale-125 duration-500 "
           />
           <h1 className="text-2xl font-semibold my-3 text-teal-400 "> Group Challenges </h1>
-          <p className="text-sm text-gray-400 ">
+          <p className="text-sm text-teal-200 ">
             Building camaraderie and encouraging participation. Monthly fitness
             challenges with rewards.
           </p>
