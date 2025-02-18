@@ -25,7 +25,7 @@ const FeaturedClass = () => {
             {classes?.slice(0,6).map((classItem) => (
               <div
                 key={classItem._id}
-                className="  overflow-hidden group rounded-md shadow-lg"
+                className=" border-teal-400 border overflow-hidden group rounded-md shadow-lg"
               >
                 <img
                   src={classItem.image}
