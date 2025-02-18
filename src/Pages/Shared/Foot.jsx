@@ -20,24 +20,24 @@ const Foot = () => {
             </div>
             <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
               <div>
-                <Footer.Title title="about" />
+                <Footer.Title title="about" className="text-teal-400"/>
                 <Footer.LinkGroup col>
-                  <Footer.Link href="#">View</Footer.Link>
-                  <Footer.Link href="#">History</Footer.Link>
+                  <Footer.Link className="text-teal-300" href="#">View</Footer.Link>
+                  <Footer.Link className="text-teal-300" href="#">History</Footer.Link>
                 </Footer.LinkGroup>
               </div>
               <div>
-                <Footer.Title title="Follow us" />
+                <Footer.Title title="Follow us" className="text-teal-400"/>
                 <Footer.LinkGroup col>
-                  <Footer.Link href="#">Github</Footer.Link>
-                  <Footer.Link href="#">Discord</Footer.Link>
+                  <Footer.Link className="text-teal-300" href="#">Github</Footer.Link>
+                  <Footer.Link className="text-teal-300" href="#">Discord</Footer.Link>
                 </Footer.LinkGroup>
               </div>
               <div>
-                <Footer.Title title="Legal" />
+                <Footer.Title title="Legal" className="text-teal-400"/>
                 <Footer.LinkGroup col>
-                  <Footer.Link href="#">Privacy Policy</Footer.Link>
-                  <Footer.Link href="#">Terms &amp; Conditions</Footer.Link>
+                  <Footer.Link className="text-teal-300" href="#">Privacy Policy</Footer.Link>
+                  <Footer.Link className="text-teal-300" href="#">Terms &amp; Conditions</Footer.Link>
                 </Footer.LinkGroup>
               </div>
             </div>
