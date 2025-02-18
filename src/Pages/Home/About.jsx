@@ -11,11 +11,11 @@ const About = () => {
         <span className="text-teal-400 border-b-4 border-teal-400">FITNESS KING</span>
       </h2>
       <div className="lg:flex items-center py-20 px-10 xl:px-36 gap-10 2xl:gap-36">
-        <div className="flex-1 text-justify  mb-10">
+        <div className="flex-1 text-justify border border-teal-400 rounded-xl p-10 mb-10">
           <div className="flex justify-center">
             <GiWeightLiftingUp className="text-teal-400 text-5xl mb-5" />
           </div>
-          <ul>
+          <ul className="border- border-teal-400">
             <p>
               <span className="text-teal-400 font-bold flex items-center -ml-4">
                 <GoDotFill className="text-teal-400" />
@@ -27,7 +27,7 @@ const About = () => {
               </span>
             </p>
             <p>
-              <GoDotFill />
+              
               <span className="text-teal-400 font-bold flex items-center -ml-4">
                 <GoDotFill className="text-teal-400" />
                 Top-Notch Equipment:
@@ -38,7 +38,7 @@ const About = () => {
               </span>
             </p>
             <p>
-              <GoDotFill />
+              
               <span className="text-teal-400 font-bold flex items-center -ml-4">
                 <GoDotFill className="text-teal-400" />
                 Supportive Community:
