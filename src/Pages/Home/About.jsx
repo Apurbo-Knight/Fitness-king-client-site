@@ -15,10 +15,10 @@ const About = () => {
           <div className="flex justify-center">
             <GiWeightLiftingUp className="text-teal-400 text-5xl mb-5" />
           </div>
-          <ul className="border- border-teal-400">
+          <ul className="border- border-teal-400 space-y-2">
             <p>
-              <span className="text-teal-400 font-bold flex items-center -ml-4">
-                <GoDotFill className="text-teal-400" />
+              <span className="text-teal-400 font-bold flex md:text-2xl items-center -ml-4">
+                <GoDotFill className="text-teal-400 text-sm" />
                 Comprehensive Training Options:
               </span>{" "}
               <span className="text-white font-light ">
@@ -28,8 +28,8 @@ const About = () => {
             </p>
             <p>
               
-              <span className="text-teal-400 font-bold flex items-center -ml-4">
-                <GoDotFill className="text-teal-400" />
+              <span className="text-teal-400 font-bold flex md:text-2xl items-center -ml-4">
+                <GoDotFill className="text-teal-400 text-sm" />
                 Top-Notch Equipment:
               </span>{" "}
               <span className="text-white font-light ">
@@ -39,8 +39,8 @@ const About = () => {
             </p>
             <p>
               
-              <span className="text-teal-400 font-bold flex items-center -ml-4">
-                <GoDotFill className="text-teal-400" />
+              <span className="text-teal-400 font-bold flex md:text-2xl items-center -ml-4">
+                <GoDotFill className="text-teal-400 text-sm" />
                 Supportive Community:
               </span>{" "}
               <span className="text-white font-light ">
@@ -49,8 +49,8 @@ const About = () => {
               </span>
             </p>
             <p>
-              <span className="text-teal-400 font-bold flex items-center -ml-4">
-                <GoDotFill className="text-teal-400" />
+              <span className="text-teal-400 font-bold flex md:text-2xl items-center -ml-4">
+                <GoDotFill className="text-teal-400 text-sm" />
                 Expert Guidance:
               </span>{" "}
               <span className="text-white font-light  ">
@@ -59,8 +59,8 @@ const About = () => {
               </span>
             </p>
             <p>
-              <span className="text-teal-400 font-bold flex items-center -ml-4">
-                <GoDotFill className="text-teal-400" />
+              <span className="text-teal-400 font-bold flex md:text-2xl items-center -ml-4">
+                <GoDotFill className="text-teal-400 text-sm" />
                 Holistic Wellness:
               </span>{" "}
               <span className="text-white font-light  ">
@@ -70,8 +70,8 @@ const About = () => {
               </span>
             </p>
             <p>
-              <span className="text-teal-400 font-bold flex items-center -ml-4">
-                <GoDotFill className="text-teal-400" />A Decade of Expertise:
+              <span className="text-teal-400 font-bold flex md:text-2xl items-center -ml-4">
+                <GoDotFill className="text-teal-400 text-sm" />A Decade of Expertise:
               </span>{" "}
               <span className="text-white font-light  ">
                 With 10 years of experience, we know what works and what
