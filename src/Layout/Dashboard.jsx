@@ -6,122 +6,210 @@ import { IoHomeOutline } from "react-icons/io5";
 import { CiBookmarkPlus, CiCirclePlus, CiSaveDown1 } from "react-icons/ci";
 import { CgCommunity, CgProfile } from "react-icons/cg";
 import { RxActivityLog } from "react-icons/rx";
-import { FaMoneyCheckAlt } from "react-icons/fa";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
 import { VscGitStashApply } from "react-icons/vsc";
 import { SiTrainerroad } from "react-icons/si";
 import { MdOutlineManageAccounts } from "react-icons/md";
 import { LuBookPlus } from "react-icons/lu";
-import gym from "../assets/gym.png"
+import gym from "../assets/gym.png";
 import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {
   const [role] = useRole();
-  console.log(role);
+
   return (
-    <div className="flex bg-black">
+    <div className="flex min-h-screen bg-gray-900 text-white">
       <Helmet>
-                      <title>
-                          Fitness king | Dashboard
-                      </title>
-                  </Helmet>
-      <div className="w-52 min-h-screen text-white font-semibold  bg-teal-400">
-        <ul className="menu">
-          <li>
-            <NavLink to={"/"}>
-              <div className="flex items-center gap-2 mb-5">
-              <img className="w-8" src={gym} alt="" /> FITNESS KING
-              </div>
-            </NavLink>
-          </li>
+        <title>Fitness King | Dashboard</title>
+      </Helmet>
+
+      {/* Sidebar */}
+      <div className="w-60 bg-gray-800 flex-shrink-0 flex flex-col p-6">
+        <NavLink to="/" className="flex items-center gap-3 mb-10 hover:scale-105 transition-transform">
+          <img className="w-8" src={gym} alt="logo" />
+          <span className="text-xl font-bold text-teal-400">FITNESS KING</span>
+        </NavLink>
+
+        <ul className="flex-1 space-y-3">
           {role === "admin" && (
             <>
               <li>
-                <NavLink className="text-lg" to="/dashboard/allNewsletter">
-                <CiSaveDown1 /> All  Subscriber
+                <NavLink
+                  to="/dashboard/allNewsletter"
+                  className={({ isActive }) =>
+                    `flex items-center gap-2 p-2 rounded-md hover:bg-teal-500 transition-colors ${
+                      isActive ? "bg-teal-400 text-black" : "text-white"
+                    }`
+                  }
+                >
+                  <CiSaveDown1 /> All Subscriber
                 </NavLink>
               </li>
               <li>
-                <NavLink className="text-lg" to="/dashboard/allTrainers">
-                <SiTrainerroad /> All Trainers
+                <NavLink
+                  to="/dashboard/allTrainers"
+                  className={({ isActive }) =>
+                    `flex items-center gap-2 p-2 rounded-md hover:bg-teal-500 transition-colors ${
+                      isActive ? "bg-teal-400 text-black" : "text-white"
+                    }`
+                  }
+                >
+                  <SiTrainerroad /> All Trainers
                 </NavLink>
               </li>
               <li>
-                <NavLink className="text-lg" to="/dashboard/appliedTrainers">
-                <VscGitStashApply /> Applied Trainers
+                <NavLink
+                  to="/dashboard/appliedTrainers"
+                  className={({ isActive }) =>
+                    `flex items-center gap-2 p-2 rounded-md hover:bg-teal-500 transition-colors ${
+                      isActive ? "bg-teal-400 text-black" : "text-white"
+                    }`
+                  }
+                >
+                  <VscGitStashApply /> Applied Trainers
                 </NavLink>
               </li>
               <li>
-                <NavLink className="text-lg" to="/dashboard/balance">
-                <RiMoneyDollarCircleLine /> Balance
+                <NavLink
+                  to="/dashboard/balance"
+                  className={({ isActive }) =>
+                    `flex items-center gap-2 p-2 rounded-md hover:bg-teal-500 transition-colors ${
+                      isActive ? "bg-teal-400 text-black" : "text-white"
+                    }`
+                  }
+                >
+                  <RiMoneyDollarCircleLine /> Balance
                 </NavLink>
               </li>
               <li>
-                <NavLink className="text-lg" to="/dashboard/addNewClass">
-                <CiCirclePlus /> Add New Class
+                <NavLink
+                  to="/dashboard/addNewClass"
+                  className={({ isActive }) =>
+                    `flex items-center gap-2 p-2 rounded-md hover:bg-teal-500 transition-colors ${
+                      isActive ? "bg-teal-400 text-black" : "text-white"
+                    }`
+                  }
+                >
+                  <CiCirclePlus /> Add New Class
                 </NavLink>
               </li>
               <li>
-                <NavLink className="text-lg" to="/dashboard/addNewForum">
-                <CgCommunity /> Add New Forum
+                <NavLink
+                  to="/dashboard/addNewForum"
+                  className={({ isActive }) =>
+                    `flex items-center gap-2 p-2 rounded-md hover:bg-teal-500 transition-colors ${
+                      isActive ? "bg-teal-400 text-black" : "text-white"
+                    }`
+                  }
+                >
+                  <CgCommunity /> Add New Forum
                 </NavLink>
               </li>
             </>
           )}
+
           {role === "trainer" && (
             <>
               <li>
-                <NavLink className="text-lg" to="/dashboard/manageSlots">
-                <MdOutlineManageAccounts />  Manage Slots
+                <NavLink
+                  to="/dashboard/manageSlots"
+                  className={({ isActive }) =>
+                    `flex items-center gap-2 p-2 rounded-md hover:bg-teal-500 transition-colors ${
+                      isActive ? "bg-teal-400 text-black" : "text-white"
+                    }`
+                  }
+                >
+                  <MdOutlineManageAccounts /> Manage Slots
                 </NavLink>
               </li>
               <li>
-                <NavLink className="text-lg" to="/dashboard/addNewSlots">
-                <LuBookPlus /> Add New Slots
+                <NavLink
+                  to="/dashboard/addNewSlots"
+                  className={({ isActive }) =>
+                    `flex items-center gap-2 p-2 rounded-md hover:bg-teal-500 transition-colors ${
+                      isActive ? "bg-teal-400 text-black" : "text-white"
+                    }`
+                  }
+                >
+                  <LuBookPlus /> Add New Slots
                 </NavLink>
               </li>
               <li>
-                <NavLink className="text-lg" to="/dashboard/addNewForum">
-                <CgCommunity /> Add New Forum
+                <NavLink
+                  to="/dashboard/addNewForum"
+                  className={({ isActive }) =>
+                    `flex items-center gap-2 p-2 rounded-md hover:bg-teal-500 transition-colors ${
+                      isActive ? "bg-teal-400 text-black" : "text-white"
+                    }`
+                  }
+                >
+                  <CgCommunity /> Add New Forum
                 </NavLink>
               </li>
             </>
           )}
+
           {role === "member" && (
             <>
               <li>
-                <NavLink className="text-lg" to="/dashboard/activityLog">
-                <RxActivityLog />  Activity Log
+                <NavLink
+                  to="/dashboard/activityLog"
+                  className={({ isActive }) =>
+                    `flex items-center gap-2 p-2 rounded-md hover:bg-teal-500 transition-colors ${
+                      isActive ? "bg-teal-400 text-black" : "text-white"
+                    }`
+                  }
+                >
+                  <RxActivityLog /> Activity Log
                 </NavLink>
               </li>
               <li>
-                <NavLink className="text-lg" to="/dashboard/profile">
-                <CgProfile />  Profile
+                <NavLink
+                  to="/dashboard/profile"
+                  className={({ isActive }) =>
+                    `flex items-center gap-2 p-2 rounded-md hover:bg-teal-500 transition-colors ${
+                      isActive ? "bg-teal-400 text-black" : "text-white"
+                    }`
+                  }
+                >
+                  <CgProfile /> Profile
                 </NavLink>
               </li>
               <li>
-                <NavLink className="text-lg" to="/dashboard/bookedTrainer">
-                <CiBookmarkPlus /> Booked Trainer
+                <NavLink
+                  to="/dashboard/bookedTrainer"
+                  className={({ isActive }) =>
+                    `flex items-center gap-2 p-2 rounded-md hover:bg-teal-500 transition-colors ${
+                      isActive ? "bg-teal-400 text-black" : "text-white"
+                    }`
+                  }
+                >
+                  <CiBookmarkPlus /> Booked Trainer
                 </NavLink>
               </li>
             </>
           )}
-          <div className="divider "></div>
-          <li>
-            <NavLink className="text-lg " to="/">
-              
-                <p className="flex items-center gap-2"><IoHomeOutline /> Home</p>
-              
-            </NavLink>
-          </li>
         </ul>
+
+        <div className="mt-auto">
+          <NavLink
+            to="/"
+            className="flex items-center gap-2 p-2 rounded-md hover:bg-teal-500 transition-colors"
+          >
+            <IoHomeOutline /> Home
+          </NavLink>
+        </div>
       </div>
-      <div className="flex-1 p-8">
-        <h2 className="font-semibold text-gray-600 flex items-center gap-2">
-          <FaArrowLeftLong /> Welcome To Our{" "}
-          <span className="text-teal-400"> Dashboard</span>
-        </h2>
-        <Outlet></Outlet>
+
+      {/* Main Content */}
+      <div className="flex-1 p-8 bg-gray-900">
+        <div className="bg-gray-800 rounded-lg p-6 mb-6 shadow-md flex items-center gap-3">
+          <FaArrowLeftLong className="text-teal-400 text-xl" />
+          <h2 className="font-semibold text-white text-lg md:text-xl">
+            Welcome To Our <span className="text-teal-400">Dashboard</span>
+          </h2>
+        </div>
+        <Outlet />
       </div>
     </div>
   );

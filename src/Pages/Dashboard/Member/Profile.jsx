@@ -7,34 +7,43 @@ import { Helmet } from "react-helmet-async";
 const Profile = () => {
   const { user } = useContext(AuthContext);
   const email = user?.email;
-  const { data:users={} } = useQuery({
-    queryKey: ["trainers", email],  // Include email in queryKey for dependency tracking
+
+  const { data: users = {} } = useQuery({
+    queryKey: ["trainers", email],
     queryFn: async () => {
-      const res = await axios.get(`https://assignment-12-server-iota-ruby.vercel.app/users/role/${email}`);
+      const res = await axios.get(
+        `https://assignment-12-server-iota-ruby.vercel.app/users/role/${email}`
+      );
       return res.data;
     },
     enabled: !!email,
   });
-//   console.log(user);
+
   return (
-    <div className="flex items-center flex-col">
+    <div className="bg-black min-h-screen flex flex-col items-center px-4 py-12">
       <Helmet>
-                      <title>
-                          Fitness king | Profile
-                      </title>
-                  </Helmet>
-      <div className="flex flex-col items-center justify-center rounded-xl border-2 border-teal-400 w-3/4 md:w-1/4 h-60 gap-2">
+        <title>Fitness King | Profile</title>
+      </Helmet>
+
+      <div className="bg-gray-900 border-2 border-teal-400 rounded-2xl shadow-lg p-8 md:p-12 w-full max-w-sm flex flex-col items-center gap-4">
         <img
-          className="rounded-full w-20 h-20 border-2 border-teal-400"
+          className="w-24 h-24 md:w-28 md:h-28 rounded-full border-2 border-teal-400 shadow-md"
           src={user?.photoURL}
-          alt=""
+          alt={user?.displayName}
         />
-        
-        <h2 className="text-teal-400 font-semibold ">{user?.displayName}</h2>
-        <h2 className="text-teal-400 font-semibold ">{user?.email}</h2>
-        <h2 className="text-teal-400 font-semibold bg-slate-900 px-2 py-1 rounded-2xl">{users?.role}</h2>
+
+        <h2 className="text-teal-400 text-xl md:text-2xl font-semibold">
+          {user?.displayName}
+        </h2>
+        <p className="text-teal-200 text-sm md:text-base">{user?.email}</p>
+        <span className="bg-gray-800 text-teal-400 px-3 py-1 rounded-full font-medium">
+          {users?.role || "Member"}
+        </span>
       </div>
-        <h2 className="text-teal-400 font-semibold sm:text-5xl mt-20">Thank you for staying with us.</h2>
+
+      <h2 className="text-teal-400 font-semibold text-center text-2xl md:text-4xl mt-12">
+        Thank you for staying with us
+      </h2>
     </div>
   );
 };

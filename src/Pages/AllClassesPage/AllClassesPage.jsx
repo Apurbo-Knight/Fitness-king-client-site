@@ -26,82 +26,72 @@ const AllClassesPage = () => {
     currentPage * itemsPerPage
   );
 
-  // Function to handle page change
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
+  const handlePageChange = (page) => setCurrentPage(page);
 
   return (
-    <div className="bg-black min-h-screen">
+    <div className="bg-black min-h-screen py-5 md:py-10 px-4 md:px-36">
       <Helmet>
         <title>Fitness King | All Classes</title>
       </Helmet>
-      <h2 className="text-5xl text-center text-white pt-20 mb-10">
-        Our{" "}
+
+      <h2 className="text-4xl md:text-5xl text-center text-white pt-20 mb-12 font-bold">
+        Our {" "}
         <span className="text-teal-400 border-b-4 border-teal-400">
           Classes
         </span>
       </h2>
-      <div className="text-center mb-10">
-        <input
-          className="bg-teal-900 rounded-md"
-          type="text"
-          placeholder="Type Class Name"
-        />{" "}
-        <button className="bg-teal-400 p-2 rounded-md text-white">
-          Search
-        </button>
-      </div>
-      <div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
-          {paginatedClasses.map((classItem) => (
-            <div
-              key={classItem._id}
-              className="overflow-hidden group rounded-md shadow-lg"
-            >
-              <div className="w-[550px]">
-                <img
-                  src={classItem.image}
-                  alt=""
-                  className="w-full bg-cover group-hover:transform group-hover:scale-110 duration-500 rounded-md"
-                />
-              </div>
-              <div className="p-4 bg-black">
-                <h3 className="font-semibold text-xl text-teal-400">
-                  {classItem.name}
-                </h3>
-                <p className="text-teal-400">{classItem.details}</p>
-                <p className="text-teal-400">
-                  {classItem.classDuration} Hours Class Duration
-                </p>
-                <p className="flex items-center gap-4 text-teal-400 mt-2 font-semibold text-xl">
-                  Trainers{" "}
-                  <div className="flex flex-wrap gap-2">
-                    {classItem.trainersData.slice(0, 5).map((trainer) => (
-                      <ImgComp key={trainer._id} trainer={trainer}></ImgComp>
-                    ))}
-                  </div>
-                </p>
+
+      
+
+      {/* Classes Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {paginatedClasses.map((classItem) => (
+          <div
+            key={classItem._id}
+            className="bg-teal-900/70 rounded-xl overflow-hidden shadow-md hover:scale-105 transition-transform duration-300"
+          >
+            <img
+              src={classItem.image}
+              alt={classItem.name}
+              className="w-full h-40 md:h-48 object-cover"
+            />
+            <div className="p-3 md:p-4">
+              <h3 className="text-lg md:text-xl font-bold text-white mb-1 md:mb-1">
+                {classItem.name}
+              </h3>
+              <p className="text-teal-200 text-sm mb-1 md:mb-1">
+                {classItem.details.length > 60
+                  ? classItem.details.slice(0, 60) + "..."
+                  : classItem.details}
+              </p>
+              <p className="text-teal-400 text-sm font-semibold mb-1">
+                Duration: {classItem.classDuration} Hours
+              </p>
+              <div className="flex flex-wrap gap-2 items-center">
+                {classItem.trainersData.slice(0, 5).map((trainer) => (
+                  <ImgComp key={trainer._id} trainer={trainer} />
+                ))}
               </div>
             </div>
-          ))}
-        </div>
-        {/* Pagination Controls */}
-        <div className="flex justify-center mt-10">
-          {Array.from({ length: totalPages }, (_, index) => (
-            <button
-              key={index}
-              className={`mx-1 px-3 py-1 rounded-md ${
-                currentPage === index + 1
-                  ? "bg-teal-400 text-white"
-                  : "bg-teal-900 text-teal-400"
-              }`}
-              onClick={() => handlePageChange(index + 1)}
-            >
-              {index + 1}
-            </button>
-          ))}
-        </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Pagination */}
+      <div className="flex justify-center mt-12 gap-2">
+        {Array.from({ length: totalPages }, (_, index) => (
+          <button
+            key={index}
+            className={`px-3 py-1 rounded-md font-semibold ${
+              currentPage === index + 1
+                ? "bg-teal-400 text-black"
+                : "bg-teal-900 text-teal-400 border border-teal-400"
+            }`}
+            onClick={() => handlePageChange(index + 1)}
+          >
+            {index + 1}
+          </button>
+        ))}
       </div>
     </div>
   );

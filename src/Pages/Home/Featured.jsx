@@ -1,104 +1,107 @@
-import nutra from "../../assets/nutra.jpeg"
-import yoga from "../../assets/yoga.jpeg"
-import beginner from "../../assets/beginner.jpeg"
-import masterB from "../../assets/masterB.webp"
-import hybrid from "../../assets/hybrid.jpeg"
-import group from "../../assets/group.jpg"
+import { motion } from "framer-motion";
 
+import nutra from "../../assets/nutra.jpeg";
+import yoga from "../../assets/yoga.jpeg";
+import beginner from "../../assets/beginner.jpeg";
+import masterB from "../../assets/masterB.webp";
+import hybrid from "../../assets/hybrid.jpeg";
+import group from "../../assets/group.jpg";
+
+const features = [
+  {
+    title: "Nutrition for Growth",
+    desc: "Personalized meal strategies for muscle gain, fat loss, and overall health.",
+    img: nutra,
+  },
+  {
+    title: "Mobility & Flexibility",
+    desc: "Yoga and Pilates programs designed to improve flexibility and joint health.",
+    img: yoga,
+  },
+  {
+    title: "Basics in Bodybuilding",
+    desc: "Beginner-friendly programs to build strength and endurance step by step.",
+    img: beginner,
+  },
+  {
+    title: "Mastery in Bodybuilding",
+    desc: "Advanced training techniques focused on strength, symmetry, and discipline.",
+    img: masterB,
+  },
+  {
+    title: "Hybrid Training Zone",
+    desc: "Multi-discipline workouts combining strength, cardio, and functional training.",
+    img: hybrid,
+  },
+  {
+    title: "Group Challenges",
+    desc: "Community-driven fitness challenges with motivation, rewards, and fun.",
+    img: group,
+  },
+];
 
 const Featured = () => {
   return (
-    <div className="bg-black px-24 p-20">
-      <h2 className="text-center text-2xl md:text-5xl py-10">
-        <span className="text-white">Our </span>
-        <span className="text-teal-400 border-b-4 border-teal-400">Features</span>
-      </h2>
-      <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        <div className="text-center text-white border-2 border-transparent hover:border-teal-400 rounded-md duration-500 p-2 pt-6 ">
-          <img
-            
-            src={nutra}
-            alt=""
-            className="w-32 h-32 mx-auto rounded-full hover:transform hover:scale-125 duration-500 "
-          />
-          <h1 className="text-2xl font-semibold my-3 text-teal-400 ">
-            Nutrition for Growth
-          </h1>
-          <p className="text-sm text-teal-200 ">
-            Providing dietary strategies to support fitness goals. Meal plans
-            tailored for muscle gain, fat loss, or general health.
-          </p>
-        </div>
-        <div className=" text-center text-white border-2 border-transparent hover:border-teal-400 rounded-md duration-500 p-2 pt-6 ">
-          <img
-            src={yoga}
-            alt=""
-            className="w-32 h-32 mx-auto rounded-full hover:transform hover:scale-125 duration-500 "
-          />
-          <h1 className="text-2xl font-semibold my-3 text-teal-400 ">
-            Mobility & Flexibility
-          </h1>
-          <p className="text-sm text-teal-200 ">
-            Enhancing range of motion and joint health. Yoga and Pilates classes
-            tailored for mobility.
-          </p>
-        </div>
-        <div className="text-center text-white border-2 border-transparent hover:border-teal-400 rounded-md duration-500 p-2 pt-6 ">
-          <img
-            src={beginner}
-            alt=""
-            className="w-32 h-32 mx-auto rounded-full hover:transform hover:scale-125 duration-500 "
-          />
-          <h1 className="text-2xl font-semibold my-3 text-teal-400 ">
-            Basics in Bodybuilding
-          </h1>
-          <p className="text-sm text-teal-200 ">
-            Building a solid foundation in fitness for beginners. Step-by-step
-            programs to build strength and endurance gradually.
-          </p>
-        </div>
-        <div className="text-center text-white border-2 border-transparent hover:border-teal-400 rounded-md duration-500 p-2 pt-6 ">
-          <img
-            src={masterB}
-            alt=""
-            className="w-32 h-32 mx-auto rounded-full  hover:transform hover:scale-125 duration-500 "
-          />
-          <h1 className="text-2xl font-semibold my-3 text-teal-400 ">
-            Mastery in Bodybuilding
-          </h1>
-          <p className="text-sm text-teal-200 ">
-            Building strength and physique through discipline and advanced
-            techniques.
-          </p>
-        </div>
-        <div className="text-center text-white border-2 border-transparent hover:border-teal-400 rounded-md duration-500 p-2 pt-6 ">
-          <img
-            src={hybrid}
-            alt=""
-            className="w-32 h-32 mx-auto rounded-full bg-cover hover:transform hover:scale-125 duration-500 "
-          />
-          <h1 className="text-2xl font-semibold my-3 text-teal-400 ">
-            Hybrid Training Zone
-          </h1>
-          <p className="text-sm text-teal-200 ">
-            Combining multiple disciplines for a versatile fitness approach.
-            Access to multi-functional equipment.
-          </p>
-        </div>
-        <div className="text-center text-white border-2 border-transparent hover:border-teal-400 rounded-md duration-500 p-2 pt-6 ">
-          <img
-            src={group}
-            alt=""
-            className="w-32 h-32 mx-auto rounded-full bg-cover hover:transform hover:scale-125 duration-500 "
-          />
-          <h1 className="text-2xl font-semibold my-3 text-teal-400 "> Group Challenges </h1>
-          <p className="text-sm text-teal-200 ">
-            Building camaraderie and encouraging participation. Monthly fitness
-            challenges with rewards.
-          </p>
-        </div>
+    <section className="relative bg-gradient-to-b from-black via-gray-900 to-black py-24 px-6 md:px-16 xl:px-32">
+      {/* Heading */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-center mb-20"
+      >
+        <span className="text-gray-400 uppercase tracking-widest text-sm">
+          What We Offer
+        </span>
+        <h2 className="text-3xl md:text-5xl font-extrabold mt-2">
+          <span className="text-white">Our </span>
+          <span className="text-teal-400 relative">
+            Features
+            <span className="absolute left-0 -bottom-2 w-full h-1 bg-teal-400 rounded-full"></span>
+          </span>
+        </h2>
+      </motion.div>
+
+      {/* Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {features.map((item, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
+            viewport={{ once: true }}
+            className="group bg-gray-900/70 backdrop-blur rounded-2xl p-8 
+                       border border-teal-500/20 hover:border-teal-400
+                       transition-all duration-300"
+          >
+            {/* Image */}
+            <div className="relative w-28 h-28 mx-auto mb-6">
+              <div
+                className="absolute inset-0 rounded-full bg-teal-400 blur-xl 
+                           opacity-20 group-hover:opacity-40 transition"
+              ></div>
+              <img
+                src={item.img}
+                alt={item.title}
+                className="relative w-full h-full object-cover rounded-full 
+                           border border-teal-500/30
+                           group-hover:scale-110 transition duration-300"
+              />
+            </div>
+
+            {/* Text */}
+            <h3 className="text-xl font-semibold text-teal-400 mb-3 text-center">
+              {item.title}
+            </h3>
+            <p className="text-sm text-gray-300 leading-relaxed text-center">
+              {item.desc}
+            </p>
+          </motion.div>
+        ))}
       </div>
-    </div>
+    </section>
   );
 };
 

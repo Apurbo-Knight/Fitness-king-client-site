@@ -1,18 +1,18 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
-import React, { useContext } from "react";
-import useRole from "../../Hooks/useRole";
+import React from "react";
 import { Helmet } from "react-helmet-async";
-// import { AuthContext } from "../../Provider/AuthProvider";
 
 const CommunityPage = () => {
   const queryClient = useQueryClient();
-  
+
   // Fetch forums
-  const { data:forums=[]  } = useQuery({
+  const { data: forums = [] } = useQuery({
     queryKey: ["forums"],
     queryFn: async () => {
-      const res = await axios.get("https://assignment-12-server-iota-ruby.vercel.app/forums");
+      const res = await axios.get(
+        "https://assignment-12-server-iota-ruby.vercel.app/forums"
+      );
       return res.data;
     },
   });
@@ -27,74 +27,68 @@ const CommunityPage = () => {
       return res.data;
     },
     onSuccess: () => {
-      queryClient.invalidateQueries(["forums"]); // Refetch forums on success
+      queryClient.invalidateQueries(["forums"]);
     },
   });
 
-  const handleLike = (id) => {
-    updateCounts.mutate({ id, action: "like" });
-  };
-
-  const handleDislike = (id) => {
-    updateCounts.mutate({ id, action: "dislike" });
-  };
-  
-  
+  const handleLike = (id) => updateCounts.mutate({ id, action: "like" });
+  const handleDislike = (id) => updateCounts.mutate({ id, action: "dislike" });
 
   return (
-    <div className="">
+    <div className="bg-black min-h-screen px-4 md:px-36 py-10">
       <Helmet>
-                      <title>
-                          Fitness king | Community
-                      </title>
-                  </Helmet>
-        <div className="mx-auto p-10 bg-black min-h-screen">
-      <h1 className="text-5xl  text-white text-center mb-6 pb-10 pt-10">
-         All <span className="text-teal-400 border-b-4 border-teal-400"> Forums</span>
+        <title>Fitness King | Community</title>
+      </Helmet>
+
+      <h1 className="text-4xl md:text-5xl font-bold text-center text-white mb-10">
+        All{" "}
+        <span className="text-teal-400 border-b-4 border-teal-400">Forums</span>
       </h1>
-      <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-[10%]">
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {forums.map((forum) => (
           <div
             key={forum?._id}
-            className="shadow-lg rounded-lg p-4 bg-teal-900 border-2 border-teal-400"
+            className="bg-gray-900 border-2 border-teal-400 rounded-xl shadow-lg p-5 flex flex-col justify-between hover:scale-105 transition-transform duration-300"
           >
-            <div className="flex items-center gap-5 mb-4 ">
+            <div className="flex items-center gap-4 mb-4">
               <img
-                src={forum?.image}
-                alt={forum?.title || "Forum Image"}
-                className="w-20 h-20 rounded-full object-cover border-teal-400 border-2"
+                src={forum?.image || "/placeholder.png"}
+                alt={forum?.title || "Forum"}
+                className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-2 border-teal-400"
               />
               <div>
-                <div className="font-semibold text-xl text-teal-400">
+                <h3 className="text-teal-400 font-semibold text-lg md:text-xl">
                   {forum?.name || "Guest User"}
-                </div>
-                <p className="text-teal-400">{forum?.role || "Member"}</p>
+                </h3>
+                <p className="text-teal-300 text-sm md:text-base">{forum?.role || "Member"}</p>
               </div>
             </div>
-            <div className="text-xl font-bold mb-2 text-teal-400">
+
+            <h4 className="text-teal-400 font-bold text-lg md:text-xl mb-2">
               {forum?.title || "Untitled Forum"}
-            </div>
-            <div className="mb-4 text-teal-400">
+            </h4>
+            <p className="text-teal-300 text-sm md:text-base mb-4">
               {forum?.description || "No description provided."}
-            </div>
-            <div className="flex justify-between w-full pt-2 border-t border-teal-400 mt-2">
+            </p>
+
+            <div className="flex justify-between mt-auto gap-2">
               <button
                 onClick={() => handleLike(forum._id)}
-                className="bg-teal-900 border border-teal-400 text-white px-4 py-2 rounded hover:bg-green-600 mt-4"
+                className="flex-1 bg-teal-700 hover:bg-green-600 transition-colors text-white px-3 py-2 rounded-lg font-semibold"
               >
-                Like ({forum?.likeCount || 0})
+                👍 Like ({forum?.likeCount || 0})
               </button>
               <button
                 onClick={() => handleDislike(forum._id)}
-                className="bg-teal-900 border border-teal-500 text-white px-4 py-2 rounded hover:bg-red-900 mt-4"
+                className="flex-1 bg-teal-700 hover:bg-red-700 transition-colors text-white px-3 py-2 rounded-lg font-semibold"
               >
-                Dislike ({forum?.dislikeCount || 0})
+                👎 Dislike ({forum?.dislikeCount || 0})
               </button>
             </div>
           </div>
         ))}
       </div>
-    </div>
     </div>
   );
 };

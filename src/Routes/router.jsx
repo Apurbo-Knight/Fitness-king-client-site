@@ -4,7 +4,7 @@ import {
 import MainLayout from "../Layout/MainLayout";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
-import Register from "../Pages/Register/register";
+// import Register from "../Pages/Register/register";
 import AllTrainer from "../Pages/AllTrainer/AllTrainer";
 import TrainerDetails from "../Pages/AllTrainer/TrainerDetails";
 import Dashboard from "../Layout/Dashboard";
@@ -28,6 +28,7 @@ import PrivateRoute from "./PrivateRoute";
 import TrainerRoute from "./TrainerRoute";
 import AdminRoute from "./AdminRoute";
 import Error from "../Pages/Error/Error";
+import Register from "../Pages/Register/Register";
 
   export const router = createBrowserRouter([
     {

@@ -20,13 +20,12 @@ const Login = () => {
     const password = form.password.value;
     console.log(email, password);
     signIn(email, password).then((result) => {
-      // navigate(from, { replace: true });
       const user = result.user;
       console.log(user);
       Swal.fire({
         position: "top-end",
         icon: "success",
-        title: "Login Succeessfull",
+        title: "Login Successful",
         showConfirmButton: false,
         timer: 1500,
       });
@@ -34,93 +33,77 @@ const Login = () => {
     });
   };
 
-  const handleGoogleSignIn = () => {
-    // googleSignIn()
-    // .then((res) => {
-    //   console.log(res.user);
-    //   const userInfo = {
-    //     email: res.user?.email,
-    //     name:res.user?.displayName
-    //   }
-    //   useAxiosPublic.post('/users',userInfo)
-    //   .then(res=>{
-    //     console.log(res.data);
-    //     navigate('/');
-    //   })
-    // });
-  };
   return (
-    <div className="bg-black min-h-screen">
+    <div className="bg-black min-h-screen flex justify-center items-center px-4">
       <Helmet>
-                      <title>
-                          Fitness king | Login
-                      </title>
-                  </Helmet>
-      <div className=" flex  justify-center items-center pt-52">
-        <div className="card w-full border-2 border-teal-400 bg-teal-600 max-w-sm shrink-0 shadow-2xl">
-          <form
-            onSubmit={handleLogin}
-            className="card-body bg-teal-600 rounded-xl"
-          >
-            <h3 className="text-center font-bold text-3xl text-teal-900">
-              Login
-            </h3>
-            <div className="">
-              <label className="label">
-                <span className="label-text text-teal-900 font-semibold">
-                  Email
-                </span>
-              </label>
-              <input
-                type="email"
-                name="email"
-                placeholder="email"
-                className="w-full rounded-lg bg-teal-900 border border-teal-400"
-                required
-              />
-            </div>
-            <div className="">
-              <label className="label">
-                <span className="label-text text-teal-900 font-semibold">
-                  Password
-                </span>
-              </label>
-              <input
-                type="password"
-                name="password"
-                placeholder="password"
-                className="w-full rounded-lg bg-teal-900 border border-teal-400"
-                required
-              />
-              <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
-                  Forgot password?
-                </a>
-              </label>
-            </div>
+        <title>Fitness King | Login</title>
+      </Helmet>
 
-            <div className="w-full mt-6">
-              <button className="btn w-full text-gray-400 bg-teal-900 hover:bg-teal-800 border border-teal-400">
-                Login
-              </button>
-            </div>
-          </form>
-          <div className="text-center">
-            <GoogleLogin></GoogleLogin>
+      <div className="w-full max-w-sm bg-teal-600 border-2 border-teal-400 rounded-xl shadow-2xl">
+        <form
+          onSubmit={handleLogin}
+          className="p-6 rounded-xl flex flex-col space-y-4"
+        >
+          <h3 className="text-center text-3xl font-bold text-teal-900 mb-4">
+            Login
+          </h3>
+
+          {/* Email Field */}
+          <div className="flex flex-col">
+            <label className="text-teal-900 font-semibold mb-1">Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+              className="p-2 rounded-lg bg-teal-900 border border-teal-400 text-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-400"
+            />
           </div>
-          <p className="text-center font-bold text-sm">
-            <>
-              New Here ?{" "}
-              <Link to="/register" className="underline text-teal-900">
-                Register
-              </Link>
-            </>
-          </p>
-          <div className="flex justify-center my-2 ">
-            <Link to={"/"}>
-              <FaHome />{" "}
-            </Link>
+
+          {/* Password Field */}
+          <div className="flex flex-col">
+            <label className="text-teal-900 font-semibold mb-1">Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+              className="p-2 rounded-lg bg-teal-900 border border-teal-400 text-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-400"
+            />
+            <label className="mt-1">
+              <a href="#" className="text-sm text-teal-200 hover:underline">
+                Forgot password?
+              </a>
+            </label>
           </div>
+
+          {/* Login Button */}
+          <button
+            type="submit"
+            className="w-full py-2 bg-teal-900 text-gray-400 border border-teal-400 rounded-lg hover:bg-teal-800 transition"
+          >
+            Login
+          </button>
+        </form>
+
+        {/* Google Login */}
+        <div className="text-center my-4">
+          <GoogleLogin />
+        </div>
+
+        {/* Register Link */}
+        <p className="text-center text-sm text-gray-200 mb-2">
+          New here?{" "}
+          <Link to="/register" className="underline text-teal-900 font-semibold">
+            Register
+          </Link>
+        </p>
+
+        {/* Home Link */}
+        <div className="flex justify-center pb-4">
+          <Link to="/" className="text-teal-400 text-xl">
+            <FaHome />
+          </Link>
         </div>
       </div>
     </div>
