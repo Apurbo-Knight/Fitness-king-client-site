@@ -6,8 +6,8 @@ import { Elements } from "@stripe/react-stripe-js";
 import { Helmet } from "react-helmet-async";
 
 // TODO ADD publishable key
-// const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
-const stripePromise = loadStripe(pk_test_51SXOILGbwkukbGN1on0T3TvF5NDV6u3zB3JrAml1Z5PkCQZmVuj3jn5b38M0GGFdhCPlLYNuvqbGIrauLEwYiaTB00LAdYVphe);
+const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
+
 
 const PaymentPage = () => {
   const locaion = useLocation();
