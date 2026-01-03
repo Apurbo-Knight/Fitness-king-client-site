@@ -5,80 +5,79 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import { Helmet } from "react-helmet-async";
 
-// TODO ADD publishable key
 const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
 
-
 const PaymentPage = () => {
-  const locaion = useLocation();
-  const { bookedData } = locaion.state || {};
+  const location = useLocation();
+  const { bookedData } = location.state || {};
   console.log(bookedData);
+
   return (
-    <div className="pt-20  bg-black min-h-screen ">
+    <div className="min-h-screen bg-black pt-24 px-4 md:px-16 text-white">
       <Helmet>
-                      <title>
-                          Fitness king | Payment
-                      </title>
-                  </Helmet>
-      <h2 className="text-center font-semibold text-5xl text-gray-400">Make your <span className="text-teal-400 border-b-4 border-teal-400">Payment</span></h2>
-      <div className="flex">
-        <div className=" flex-1 mt-20 w-1/2 h-[450px] shadow-lg rounded-lg p-6 border border-teal-400 hover:shadow-xl transition-shadow duration-300">
-          {/* paymen Deails */}
-          <h2 className="text-teal-700 font-bold border-b-2 border-teal-400 pb-6 mb-2 text-2xl text-center">
+        <title>Fitness King | Payment</title>
+      </Helmet>
+
+      {/* Heading */}
+      <h2 className="text-center text-4xl md:text-5xl font-bold mb-12">
+        Complete Your{" "}
+        <span className="text-teal-400 border-b-4 border-teal-400">
+          Payment
+        </span>
+      </h2>
+
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
+        {/* Payment Details Card */}
+        <div className="flex-1 bg-gray-900 rounded-2xl shadow-lg p-8 border border-teal-400 hover:shadow-2xl transition-shadow duration-300">
+          <h3 className="text-2xl font-bold mb-6 text-center text-teal-400">
             Payment Details
-          </h2>
-          <div>
-            <div className="flex items-center justify-center gap-5 border-b-2 border-teal-400 pb-2">
-              <img
-                className="w-20 border-2 border-teal-400 rounded-full "
-                src={bookedData?.userImage}
-                alt=""
-              />
-              <div>
-                <h2 className="text-teal-700 font-semibold xl:text-xl">
-                  {bookedData.userName}
-                </h2>
-                <p className="text-teal-700 font-semibold xl:text-xl">
-                  {bookedData.userEmail}
-                </p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <h2 className="text-center text-xl mb-5 text-teal-700 font-semibold xl:text-xl">
-              Trainer Information
-            </h2>
-            <div className="flex items-center justify-center gap-5 border-b-2 border-teal-400 pb-2">
-              <img
-                className="w-20 border-2 border-teal-400 rounded-full"
-                src={bookedData?.trainer?.img}
-              ></img>
-              <h2 className="text-teal-700 font-semibold xl:text-xl">
-                {bookedData?.trainer.name}
-              </h2>
-            </div>
-          </div>
-          <div className="flex flex-col items-center pt-3">
+          </h3>
+
+          {/* User Info */}
+          <div className="flex items-center gap-4 border-b border-teal-400 pb-4 mb-4">
+            <img
+              src={bookedData?.userImage}
+              alt={bookedData?.userName}
+              className="w-16 h-16 rounded-full border-2 border-teal-400 object-cover"
+            />
             <div>
-              <h2 className="text-teal-700 font-semibold xl:text-xl">
-                Class Time: {bookedData?.slot}
-              </h2>
-              <h2 className="text-teal-700 font-semibold xl:text-xl">
-                Package: {bookedData?.packageName}
-              </h2>
-              <h2 className="text-teal-700 font-semibold xl:text-xl">
-                Price: $ {bookedData?.packagPrice}
-              </h2>
+              <p className="text-white font-semibold">{bookedData?.userName}</p>
+              <p className="text-teal-400 text-sm">{bookedData?.userEmail}</p>
             </div>
+          </div>
+
+          {/* Trainer Info */}
+          <div className="mb-4">
+            <h4 className="text-teal-400 font-semibold mb-2 text-center">Trainer</h4>
+            <div className="flex items-center gap-4 justify-center">
+              <img
+                src={bookedData?.trainer?.img}
+                alt={bookedData?.trainer?.name}
+                className="w-16 h-16 rounded-full border-2 border-teal-400 object-cover"
+              />
+              <p className="text-white font-medium">{bookedData?.trainer?.name}</p>
+            </div>
+          </div>
+
+          {/* Class & Package Info */}
+          <div className="text-center mt-6 space-y-2">
+            <p className="text-white font-medium">
+              Class Time: <span className="text-teal-400">{bookedData?.slot}</span>
+            </p>
+            <p className="text-white font-medium">
+              Package: <span className="text-teal-400">{bookedData?.packageName}</span>
+            </p>
+            <p className="text-white font-medium">
+              Price: <span className="text-teal-400 font-bold text-lg">${bookedData?.packagPrice}</span>
+            </p>
           </div>
         </div>
-        <div className="flex-1 mt-20 w-1/2 p-6">
-          {/* payment work */}
+
+        {/* Checkout Form Card */}
+        <div className="flex-1 bg-gray-900 rounded-2xl shadow-lg p-8 border border-teal-400 hover:shadow-2xl transition-shadow duration-300">
+          <h3 className="text-2xl font-bold mb-6 text-center text-teal-400">Payment</h3>
           <Elements stripe={stripePromise}>
-            <CheckoutForm
-              bookedData={bookedData}
-              price={bookedData?.packagPrice}
-            ></CheckoutForm>
+            <CheckoutForm bookedData={bookedData} price={bookedData?.packagPrice} />
           </Elements>
         </div>
       </div>
