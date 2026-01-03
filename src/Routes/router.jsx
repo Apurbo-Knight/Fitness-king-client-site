@@ -84,6 +84,7 @@ import Register from "../Pages/Register/Register";
       children:[
         // admin routes
         {
+          
           path:'allNewsletter',
           element:<AdminRoute><PrivateRoute><AllNewsletter></AllNewsletter></PrivateRoute></AdminRoute> 
         },
@@ -118,6 +119,7 @@ import Register from "../Pages/Register/Register";
         },
         // member routes
         {
+          index:true,
           path:'activityLog',
           element:<PrivateRoute><ActivityLogPage></ActivityLogPage></PrivateRoute>
         },
