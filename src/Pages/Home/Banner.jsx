@@ -56,7 +56,7 @@ const Banner = () => {
           </Link>
 
           <Link
-            to="/contact"
+            to="/community"
             className="px-8 py-4 rounded-full font-semibold 
                        border border-white/50 text-white 
                        hover:bg-white hover:text-black 
